@@ -77,7 +77,8 @@ async def run_sample():
     role_assignment = await client.create_role_assignment(
         scope=scope, definition_id=definition_id, principal_id=principal_id
     )
-    print("Role assignment created successfully.")
+    # print("Role assignment created successfully.")
+    print(f"{definition_id} Role assignment created successfully.")
 
     # Let's delete the role assignment.
     print("\n.. Delete a role assignment")
