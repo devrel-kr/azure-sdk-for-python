@@ -8,6 +8,7 @@
 # Changes may cause incorrect behavior and will be lost if the code is
 # regenerated.
 # --------------------------------------------------------------------------
+import sys
 from msrest import Serializer, Deserializer
 from typing import TYPE_CHECKING
 
@@ -17,6 +18,8 @@ if TYPE_CHECKING:
 
     from azure.core.paging import ItemPaged
 
+def func_name(): 
+    return sys._getframe(1).f_code.co_name
 
 class KeyVaultClientOperationsMixin(object):
 
@@ -42,11 +45,11 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_0.models.BackupCertificateResult
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('backup_certificate')
+        api_version = self._get_api_version(func_name())
         if api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'backup_certificate'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -85,7 +88,7 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_3.models.BackupKeyResult
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('backup_key')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
@@ -97,7 +100,7 @@ class KeyVaultClientOperationsMixin(object):
         elif api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'backup_key'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -127,13 +130,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.BackupSecretResult
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('backup_secret')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'backup_secret'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -163,11 +166,11 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_0.models.BackupStorageResult
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('backup_storage_account')
+        api_version = self._get_api_version(func_name())
         if api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'backup_storage_account'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -200,13 +203,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.CertificateOperation
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('create_certificate')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'create_certificate'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -241,7 +244,7 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_3.models.KeyBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('create_key')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
@@ -253,7 +256,7 @@ class KeyVaultClientOperationsMixin(object):
         elif api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'create_key'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -293,7 +296,7 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_3.models.KeyOperationResult
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('decrypt')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
@@ -305,7 +308,7 @@ class KeyVaultClientOperationsMixin(object):
         elif api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'decrypt'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -336,13 +339,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.DeletedCertificateBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('delete_certificate')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'delete_certificate'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -369,13 +372,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.Contacts
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('delete_certificate_contacts')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'delete_certificate_contacts'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -405,13 +408,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.IssuerBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('delete_certificate_issuer')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'delete_certificate_issuer'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -442,13 +445,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.CertificateOperation
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('delete_certificate_operation')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'delete_certificate_operation'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -480,7 +483,7 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_3.models.DeletedKeyBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('delete_key')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
@@ -492,7 +495,7 @@ class KeyVaultClientOperationsMixin(object):
         elif api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'delete_key'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -523,13 +526,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.SasDefinitionBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('delete_sas_definition')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'delete_sas_definition'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -559,13 +562,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.DeletedSecretBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('delete_secret')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'delete_secret'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -592,13 +595,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.StorageBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('delete_storage_account')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'delete_storage_account'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -640,7 +643,7 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_3.models.KeyOperationResult
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('encrypt')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
@@ -652,7 +655,7 @@ class KeyVaultClientOperationsMixin(object):
         elif api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'encrypt'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -685,13 +688,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.CertificateBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_certificate')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_certificate'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -718,13 +721,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.Contacts
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_certificate_contacts')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_certificate_contacts'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -755,13 +758,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.IssuerBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_certificate_issuer')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_certificate_issuer'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -795,13 +798,13 @@ class KeyVaultClientOperationsMixin(object):
          ~azure.core.paging.ItemPaged[~azure.keyvault.v2016_10_01.models.CertificateIssuerListResult]
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_certificate_issuers')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_certificate_issuers'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -831,13 +834,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.CertificateOperation
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_certificate_operation')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_certificate_operation'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -867,13 +870,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.CertificatePolicy
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_certificate_policy')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_certificate_policy'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -908,13 +911,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.core.paging.ItemPaged[~azure.keyvault.v2016_10_01.models.CertificateListResult]
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_certificate_versions')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_certificate_versions'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -946,13 +949,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.core.paging.ItemPaged[~azure.keyvault.v2016_10_01.models.CertificateListResult]
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_certificates')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_certificates'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -983,13 +986,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.DeletedCertificateBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_deleted_certificate')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_deleted_certificate'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1024,13 +1027,13 @@ class KeyVaultClientOperationsMixin(object):
          ~azure.core.paging.ItemPaged[~azure.keyvault.v2016_10_01.models.DeletedCertificateListResult]
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_deleted_certificates')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_deleted_certificates'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1061,7 +1064,7 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_3.models.DeletedKeyBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_deleted_key')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
@@ -1073,7 +1076,7 @@ class KeyVaultClientOperationsMixin(object):
         elif api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_deleted_key'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1108,7 +1111,7 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.core.paging.ItemPaged[~azure.keyvault.v7_3.models.DeletedKeyListResult]
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_deleted_keys')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
@@ -1120,7 +1123,7 @@ class KeyVaultClientOperationsMixin(object):
         elif api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_deleted_keys'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1153,11 +1156,11 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_0.models.DeletedSasDefinitionBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_deleted_sas_definition')
+        api_version = self._get_api_version(func_name())
         if api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_deleted_sas_definition'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1193,11 +1196,11 @@ class KeyVaultClientOperationsMixin(object):
          ~azure.core.paging.ItemPaged[~azure.keyvault.v7_0.models.DeletedSasDefinitionListResult]
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_deleted_sas_definitions')
+        api_version = self._get_api_version(func_name())
         if api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_deleted_sas_definitions'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1227,13 +1230,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.DeletedSecretBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_deleted_secret')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_deleted_secret'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1266,13 +1269,13 @@ class KeyVaultClientOperationsMixin(object):
          ~azure.core.paging.ItemPaged[~azure.keyvault.v2016_10_01.models.DeletedSecretListResult]
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_deleted_secrets')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_deleted_secrets'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1302,11 +1305,11 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_0.models.DeletedStorageBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_deleted_storage_account')
+        api_version = self._get_api_version(func_name())
         if api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_deleted_storage_account'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1338,11 +1341,11 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.core.paging.ItemPaged[~azure.keyvault.v7_0.models.DeletedStorageListResult]
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_deleted_storage_accounts')
+        api_version = self._get_api_version(func_name())
         if api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_deleted_storage_accounts'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1376,7 +1379,7 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_3.models.KeyBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_key')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
@@ -1388,7 +1391,7 @@ class KeyVaultClientOperationsMixin(object):
         elif api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_key'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1418,11 +1421,11 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_3.models.KeyRotationPolicy
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_key_rotation_policy')
+        api_version = self._get_api_version(func_name())
         if api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_key_rotation_policy'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1456,7 +1459,7 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.core.paging.ItemPaged[~azure.keyvault.v7_3.models.KeyListResult]
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_key_versions')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
@@ -1468,7 +1471,7 @@ class KeyVaultClientOperationsMixin(object):
         elif api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_key_versions'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1501,7 +1504,7 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.core.paging.ItemPaged[~azure.keyvault.v7_3.models.KeyListResult]
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_keys')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
@@ -1513,7 +1516,7 @@ class KeyVaultClientOperationsMixin(object):
         elif api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_keys'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1542,11 +1545,11 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_3.models.RandomBytes
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_random_bytes')
+        api_version = self._get_api_version(func_name())
         if api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_random_bytes'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1577,13 +1580,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.SasDefinitionBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_sas_definition')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_sas_definition'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1617,13 +1620,13 @@ class KeyVaultClientOperationsMixin(object):
          ~azure.core.paging.ItemPaged[~azure.keyvault.v2016_10_01.models.SasDefinitionListResult]
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_sas_definitions')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_sas_definitions'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1656,13 +1659,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.SecretBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_secret')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_secret'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1696,13 +1699,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.core.paging.ItemPaged[~azure.keyvault.v2016_10_01.models.SecretListResult]
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_secret_versions')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_secret_versions'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1734,13 +1737,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.core.paging.ItemPaged[~azure.keyvault.v2016_10_01.models.SecretListResult]
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_secrets')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_secrets'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1768,13 +1771,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.StorageBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_storage_account')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_storage_account'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1803,13 +1806,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.core.paging.ItemPaged[~azure.keyvault.v2016_10_01.models.StorageListResult]
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('get_storage_accounts')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'get_storage_accounts'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1844,13 +1847,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.CertificateBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('import_certificate')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'import_certificate'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1885,7 +1888,7 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_3.models.KeyBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('import_key')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
@@ -1897,7 +1900,7 @@ class KeyVaultClientOperationsMixin(object):
         elif api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'import_key'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1931,13 +1934,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.CertificateBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('merge_certificate')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'merge_certificate'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -1968,13 +1971,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: None
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('purge_deleted_certificate')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'purge_deleted_certificate'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2005,7 +2008,7 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: None
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('purge_deleted_key')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
@@ -2017,7 +2020,7 @@ class KeyVaultClientOperationsMixin(object):
         elif api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'purge_deleted_key'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2048,13 +2051,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: None
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('purge_deleted_secret')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'purge_deleted_secret'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2085,11 +2088,11 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: None
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('purge_deleted_storage_account')
+        api_version = self._get_api_version(func_name())
         if api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'purge_deleted_storage_account'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2121,13 +2124,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.CertificateBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('recover_deleted_certificate')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'recover_deleted_certificate'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2159,7 +2162,7 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_3.models.KeyBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('recover_deleted_key')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
@@ -2171,7 +2174,7 @@ class KeyVaultClientOperationsMixin(object):
         elif api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'recover_deleted_key'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2205,11 +2208,11 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_0.models.SasDefinitionBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('recover_deleted_sas_definition')
+        api_version = self._get_api_version(func_name())
         if api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'recover_deleted_sas_definition'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2239,13 +2242,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.SecretBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('recover_deleted_secret')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'recover_deleted_secret'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2276,11 +2279,11 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_0.models.StorageBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('recover_deleted_storage_account')
+        api_version = self._get_api_version(func_name())
         if api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'recover_deleted_storage_account'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2311,13 +2314,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.StorageBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('regenerate_storage_account_key')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'regenerate_storage_account_key'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2353,11 +2356,11 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_3.models.KeyReleaseResult
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('release')
+        api_version = self._get_api_version(func_name())
         if api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'release'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2387,11 +2390,11 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_0.models.CertificateBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('restore_certificate')
+        api_version = self._get_api_version(func_name())
         if api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'restore_certificate'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2429,7 +2432,7 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_3.models.KeyBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('restore_key')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
@@ -2441,7 +2444,7 @@ class KeyVaultClientOperationsMixin(object):
         elif api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'restore_key'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2471,13 +2474,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.SecretBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('restore_secret')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'restore_secret'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2507,11 +2510,11 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_0.models.StorageBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('restore_storage_account')
+        api_version = self._get_api_version(func_name())
         if api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'restore_storage_account'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2543,11 +2546,11 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_3.models.KeyBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('rotate_key')
+        api_version = self._get_api_version(func_name())
         if api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'rotate_key'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2577,13 +2580,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.Contacts
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('set_certificate_contacts')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'set_certificate_contacts'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2616,13 +2619,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.IssuerBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('set_certificate_issuer')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'set_certificate_issuer'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2656,13 +2659,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.SasDefinitionBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('set_sas_definition')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'set_sas_definition'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2696,13 +2699,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.SecretBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('set_secret')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'set_secret'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2732,13 +2735,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.StorageBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('set_storage_account')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'set_storage_account'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2775,7 +2778,7 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_3.models.KeyOperationResult
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('sign')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
@@ -2787,7 +2790,7 @@ class KeyVaultClientOperationsMixin(object):
         elif api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'sign'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2825,7 +2828,7 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_3.models.KeyOperationResult
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('unwrap_key')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
@@ -2837,7 +2840,7 @@ class KeyVaultClientOperationsMixin(object):
         elif api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'unwrap_key'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2874,13 +2877,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.CertificateBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('update_certificate')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'update_certificate'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2913,13 +2916,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.IssuerBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('update_certificate_issuer')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'update_certificate_issuer'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2953,13 +2956,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.CertificateOperation
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('update_certificate_operation')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'update_certificate_operation'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -2992,13 +2995,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.CertificatePolicy
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('update_certificate_policy')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'update_certificate_policy'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -3036,7 +3039,7 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_3.models.KeyBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('update_key')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
@@ -3048,7 +3051,7 @@ class KeyVaultClientOperationsMixin(object):
         elif api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'update_key'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -3081,11 +3084,11 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_3.models.KeyRotationPolicy
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('update_key_rotation_policy')
+        api_version = self._get_api_version(func_name())
         if api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'update_key_rotation_policy'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -3119,13 +3122,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.SasDefinitionBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('update_sas_definition')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'update_sas_definition'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -3162,13 +3165,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.SecretBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('update_secret')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'update_secret'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -3199,13 +3202,13 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v2016_10_01.models.StorageBundle
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('update_storage_account')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
             from .v7_0.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'update_storage_account'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -3244,7 +3247,7 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_3.models.KeyVerifyResult
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('verify')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
@@ -3256,7 +3259,7 @@ class KeyVaultClientOperationsMixin(object):
         elif api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'verify'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config
@@ -3296,7 +3299,7 @@ class KeyVaultClientOperationsMixin(object):
         :rtype: ~azure.keyvault.v7_3.models.KeyOperationResult
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        api_version = self._get_api_version('wrap_key')
+        api_version = self._get_api_version(func_name())
         if api_version == '2016-10-01':
             from .v2016_10_01.operations import KeyVaultClientOperationsMixin as OperationClass
         elif api_version == '7.0':
@@ -3308,7 +3311,7 @@ class KeyVaultClientOperationsMixin(object):
         elif api_version == '7.3':
             from .v7_3.operations import KeyVaultClientOperationsMixin as OperationClass
         else:
-            raise ValueError("API version {} does not have operation 'wrap_key'".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         mixin_instance = OperationClass()
         mixin_instance._client = self._client
         mixin_instance._config = self._config

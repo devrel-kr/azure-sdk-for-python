@@ -8,7 +8,7 @@
 # Changes may cause incorrect behavior and will be lost if the code is
 # regenerated.
 # --------------------------------------------------------------------------
-
+import sys
 from typing import TYPE_CHECKING
 
 from msrest import Deserializer, Serializer
@@ -23,6 +23,9 @@ from ._operations_mixin import KeyVaultClientOperationsMixin
 if TYPE_CHECKING:
     # pylint: disable=unused-import,ungrouped-imports
     from typing import Any, Optional
+
+def func_name(): 
+    return sys._getframe(1).f_code.co_name
 
 class _SDKClient(object):
     def __init__(self, *args, **kwargs):
@@ -124,7 +127,7 @@ class KeyVaultClient(KeyVaultClientOperationsMixin, MultiApiClientMixin, _SDKCli
         if api_version == '2016-10-01' or api_version == '7.0' or api_version == '7.1' or api_version == '7.2' or api_version == '7.3':
             base_url = '{vaultBaseUrl}'
         else:
-            raise ValueError("API version {} is not available".format(api_version))
+            raise ValueError(f"API version {api_version} does not have operation '{func_name()}'")
         self._config = KeyVaultClientConfiguration(**kwargs)
         self._client = PipelineClient(base_url=base_url, config=self._config, **kwargs)
         super(KeyVaultClient, self).__init__(
