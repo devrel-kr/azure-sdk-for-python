@@ -2,21 +2,22 @@
 # Copyright (c) Microsoft Corporation.
 # Licensed under the MIT License.
 # -------------------------------------
+from typing import Any, Dict, List, Optional, Union, TYPE_CHECKING
+from datetime import datetime
+
 from collections import namedtuple
 from ._shared import parse_key_vault_id
 from ._generated_models import JsonWebKey as _JsonWebKey
+from ._enums import KeyOperation, KeyRotationPolicyAction, KeyType
 
-try:
-    from typing import TYPE_CHECKING
-except ImportError:
-    TYPE_CHECKING = False
+# try:
+#     from typing import TYPE_CHECKING
+# except ImportError:
+#     TYPE_CHECKING = False
 
 if TYPE_CHECKING:
     # pylint:disable=unused-import
-    from typing import Any, Dict, List, Optional, Union
-    from datetime import datetime
     from . import _generated_models as _models
-    from ._enums import KeyOperation, KeyRotationPolicyAction, KeyType
 
 KeyOperationResult = namedtuple("KeyOperationResult", ["id", "value"])
 
@@ -62,7 +63,7 @@ class JsonWebKey(object):
 class KeyProperties(object):
     """A key's id and attributes."""
 
-    def __init__(self, key_id : str, attributes:Optional[_models.KeyAttributes]=None, **kwargs:Any) -> None:
+    def __init__(self, key_id : str, attributes:Optional['_models.KeyAttributes']=None, **kwargs:Any) -> None:
         self._attributes = attributes
         self._id = key_id
         self._vault_id = KeyVaultKeyIdentifier(key_id)
@@ -74,7 +75,7 @@ class KeyProperties(object):
         return "<KeyProperties [{}]>".format(self.id)[:1024]
 
     @classmethod
-    def _from_key_bundle(cls, key_bundle: _models.KeyBundle) -> 'KeyProperties':
+    def _from_key_bundle(cls, key_bundle: '_models.KeyBundle') -> 'KeyProperties':
         """Construct a KeyProperties from an autorest-generated KeyBundle"""
         # pylint:disable=line-too-long
         # release_policy was added in 7.3-preview
@@ -97,7 +98,7 @@ class KeyProperties(object):
         )
     
     @classmethod
-    def _from_key_item(cls, key_item: _models.KeyItem) -> 'KeyProperties':
+    def _from_key_item(cls, key_item: '_models.KeyItem') -> 'KeyProperties':
         """Construct a KeyProperties from an autorest-generated KeyItem"""
         return cls(
             key_id=key_item.kid,  # type: ignore
@@ -383,7 +384,7 @@ class KeyVaultKey(object):
         return "<KeyVaultKey [{}]>".format(self.id)[:1024]
 
     @classmethod
-    def _from_key_bundle(cls, key_bundle:_models.KeyBundle) -> 'KeyVaultKey':
+    def _from_key_bundle(cls, key_bundle:'_models.KeyBundle') -> 'KeyVaultKey':
         """Construct a KeyVaultKey from an autorest-generated KeyBundle"""
         # pylint:disable=protected-access
         return cls(
@@ -498,7 +499,7 @@ class DeletedKey(KeyVaultKey):
         return "<DeletedKey [{}]>".format(self.id)[:1024]
 
     @classmethod
-    def _from_deleted_key_bundle(cls, deleted_key_bundle: _models.DeletedKeyBundle) -> 'DeletedKey':
+    def _from_deleted_key_bundle(cls, deleted_key_bundle: '_models.DeletedKeyBundle') -> 'DeletedKey':
         """Construct a DeletedKey from an autorest-generated DeletedKeyBundle"""
         # pylint:disable=protected-access
         return cls(
@@ -511,7 +512,7 @@ class DeletedKey(KeyVaultKey):
         )
 
     @classmethod
-    def _from_deleted_key_item(cls, deleted_key_item: _models.DeletedKeyItem) -> 'DeletedKey':
+    def _from_deleted_key_item(cls, deleted_key_item: '_models.DeletedKeyItem') -> 'DeletedKey':
         """Construct a DeletedKey from an autorest-generated DeletedKeyItem"""
         return cls(
             properties=KeyProperties._from_key_item(deleted_key_item),  # pylint: disable=protected-access
