@@ -1,0 +1,13 @@
+trigger: none
+
+stages:
+  - template: /eng/pipelines/templates/stages/archetype-sdk-tests.yml
+    parameters:
+      BuildTargetingString: azure-digitaltwins-core
+      ServiceDirectory: digitaltwins
+      Location: westus2
+      EnvVars:
+        AZURE_CLIENT_ID: $(DIGITALTWINS_CLIENT_ID)
+        AZURE_CLIENT_SECRET: $(DIGITALTWINS_CLIENT_SECRET)
+        AZURE_TENANT_ID: $(DIGITALTWINS_TENANT_ID)
+        TEST_MODE: 'RunLiveNoRecord'

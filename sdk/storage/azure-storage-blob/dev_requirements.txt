@@ -1,0 +1,7 @@
+-e ../../../tools/vcrpy
+-e ../../../tools/azure-devtools
+-e ../../../tools/azure-sdk-tools
+../../core/azure-core
+azure-identity
+-e ../../storage/azure-mgmt-storage
+aiohttp>=3.0

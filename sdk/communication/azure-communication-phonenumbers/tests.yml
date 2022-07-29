@@ -1,0 +1,28 @@
+trigger: none
+
+stages:
+  - template: /eng/pipelines/templates/stages/archetype-sdk-tests.yml
+    parameters:
+      BuildTargetingString: "azure-communication-phonenumbers"
+      JobName: phonenumbers
+      ServiceDirectory: communication
+      CloudConfig:
+        Public:
+          SubscriptionConfigurations:
+            - $(sub-config-azure-cloud-test-resources)
+            - $(sub-config-communication-services-cloud-test-resources-common)
+            - $(sub-config-communication-services-cloud-test-resources-python)
+          MatrixReplace:
+            - TestSamples=.*/true
+        Int:
+          SubscriptionConfigurations:
+            - $(sub-config-communication-int-test-resources-common)
+            - $(sub-config-communication-int-test-resources-python)
+          MatrixReplace:
+            - COMMUNICATION_SKIP_CAPABILITIES_LIVE_TEST=false/true
+      Clouds: Public,Int
+      MatrixConfigs:
+        - Name: PhoneNumbers_python_livetest_matrix
+          Path: sdk/communication/azure-communication-phonenumbers/phonenumbers-livetest-matrix.json
+          Selection: sparse
+          GenerateVMJobs: true
