@@ -82,7 +82,7 @@ def empty_challenge_cache(fn):
 def get_random_url():
     """The challenge cache is keyed on URLs. Random URLs defend against tests interfering with each other."""
 
-    return "https://{}/{}".format(uuid4(), uuid4()).replace("-", "")
+    return f"https://{uuid4()}/{uuid4()}".replace("-", "")
 
 
 def test_enforces_tls():
